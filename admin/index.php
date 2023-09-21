@@ -21,7 +21,7 @@ if (!$conn) {
         <meta name="description" content="">
         <meta name="author" content="Müller Nocciolli">
         <meta name="generator" content="">
-        <title>List groups · Bootstrap v5.3</title>
+        <title>Manhattan Admin - Eventos</title>
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     </head>
@@ -30,7 +30,7 @@ if (!$conn) {
 
         <div class='d-flex justify-content-center'>
             <div style='width:1200px; height:100px; text-align:right; padding: 30px'>
-                <button type="button" class="btn btn-primary">Adcionar Evento</button>
+                <a href='./cadastro.php'><button type="button" class="btn btn-primary">Adcionar Evento</button></a>
             </div>
         </div>
 
