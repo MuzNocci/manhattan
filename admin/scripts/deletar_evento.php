@@ -8,8 +8,13 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql_delete = 'DELETE FROM events WHERE idevent = '.$_POST['id'];
+$id = $_POST['id'];
+$events = mysqli_query($conn, 'SELECT * FROM events WHERE idevent = '.$id);
+while ($dados = mysqli_fetch_array($events)) {
+    unlink($dir.'/'.$dados['image']);
+}
 
+$sql_delete = 'DELETE FROM events WHERE idevent = '.$id;
 mysqli_query($conn, $sql_delete);
 
 header('Location: ../');

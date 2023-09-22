@@ -47,7 +47,8 @@ if (!$conn) {
 
                 ?>
 
-                <form action="./scripts/cadastrar_evento.php" method="post" enctype="multipart/form-data" style="margin-bottom:40px;">
+                <form action="./scripts/atualizar_evento.php" method="post" enctype="multipart/form-data" style="margin-bottom:40px;">
+                <input type="hidden" class="form-control" id="idevent" name="idevent" value="<?php echo $dados['idevent']?>">           
 
                     <div class="form-group col-md-6" style="margin-bottom:20px;">
                         <label for="event">Evento</label>
@@ -87,7 +88,7 @@ if (!$conn) {
                     <div class="form-group col-md-6" style="margin-bottom:20px;">
                         <label for="image">Imagem do Evento</label>
                         <input type="file" class="form-control" id="image" name="image">
-                        <input type="hidden" class="form-control" id="old_image" name="old_image" value="<?php echo $dados['price'] ?>">
+                        <input type="hidden" class="form-control" id="old_image" name="old_image" value="<?php echo $dados['image'] ?>">
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-sm">Atualizar Evento</button>
