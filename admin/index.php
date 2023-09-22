@@ -30,7 +30,7 @@ if (!$conn) {
 
         <div class='d-flex justify-content-center'>
             <div style='width:90%; height:100px; text-align:right; padding: 30px 0'>
-                <a href='./cadastro.php'><button type="button" class="btn btn-primary">Adcionar Evento</button></a>
+                <a href='./cadastro.php'><button type="button" class="btn btn-primary">Adicionar Evento</button></a>
             </div>
         </div>
 
@@ -47,7 +47,7 @@ if (!$conn) {
                         <th scope="col">Descrição</th>
                         <th scope="col">Preço</th>
                         <th scope="col">Imagem</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col" colspan="2">Actions</th>
                     </tr>
                 </thead>
                 <thead>
@@ -67,7 +67,8 @@ if (!$conn) {
                     echo '  <th scope="col">'.$dados['description'].'</th>';
                     echo '  <th scope="col">'.$dados['price'].'</th>';
                     if ($dados['image'] != ""){echo '  <th scope="col">Carregada</th>';}else{echo '  <th scope="col">Não carregada</th>';}
-                    echo '  <th scope="col" style="width:100px"><button type="button" alt="Editar" title="Editar" class="btn btn-primary btn-sm">E</button> | <a href=""><button type="button" alt="Deletar" title="Deletar" class="btn btn-danger btn-sm">X</button></a></th>';
+                    echo '  <th scope="col" style="width:40px"><form method="POST" action="atualizo.php"><input type="hidden" id="id" name="id" value="'.$dados['idevent'].'" /><button type="submit" alt="Editar" title="Editar" class="btn btn-primary btn-sm">E</button></form></th>';
+                    echo '  <th scope="col" style="width:40px"><form method="POST" action="scripts/deletar_evento.php"><input type="hidden" id="id" name="id" value="'.$dados['idevent'].'" /><button type="submit" alt="Deletar" title="Deletar" class="btn btn-danger btn-sm">X</button></form></th>';
                     echo '</tr>';
             
                 }

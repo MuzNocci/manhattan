@@ -259,7 +259,7 @@ if (!$conn) {
 		echo '<div class="swiper-slide">';
 		echo '	<div class="swiper-programacao__item px-4 px-md-0 text-center">';
 		list($ano, $mes, $dia) = explode('-', $dados['date']);
-		echo '		<h3><span class="text-warning">'.$dia.' - '.$mes.'</span> <br /> <span class="programacao__hora"><span class="text-white">A partir das</span> <span class="text-warning">'.$dados['hour'].'h</span></span></h3>';
+		echo '		<h3><span class="text-warning">'.$dia.' - '.strtoupper(date("M", mktime(0, 0, 0, $mes, 10, 2023))).'</span> <br /> <span class="programacao__hora"><span class="text-white">A partir das</span> <span class="text-warning">'.$dados['hour'].'h</span></span></h3>';
 		echo '		<a href="https://www.nocciolli.com.br/presentation/manhattan/vendas-online/comprar">';
 		echo '			<img src="https://www.nocciolli.com.br/presentation/manhattan/assets/upload_img/'.$dados['image'].'" class="img-fluid rounded-3 border border-dark mb-2" alt="">';
 		echo '		</a>';		

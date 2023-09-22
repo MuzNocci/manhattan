@@ -1,0 +1,4 @@
+"idevent";"event";"date";"hour";"title";"attraction";"description";"price";"image"
+6;"Teste 003";"2023-11-12";19;"Título de teste 03";"Fulano e Fulaninho";"Testando a gravação no banco de dados MySQL.";80.0;"event_1.jpg"
+7;"Evento 005";"2023-10-08";20;"Título do Evento 005";"Fulano e Beltrano";"Testando a gravação no banco de daddos.";99.0;"event_2.jpg"
+8;"Evento 11";"2023-12-15";22;"Título do Evento 11";"Xurulipa";"Teste de envio de arquivo.";60.0;"event_3.jpg"
