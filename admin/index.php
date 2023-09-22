@@ -2,7 +2,7 @@
 
 session_start();
 
-include('connection_db.php');
+include('scripts/connection_db.php');
 
 $conn = mysqli_connect($servername, $username, $password, $database);
 
@@ -29,13 +29,13 @@ if (!$conn) {
     <body>
 
         <div class='d-flex justify-content-center'>
-            <div style='width:1200px; height:100px; text-align:right; padding: 30px'>
+            <div style='width:90%; height:100px; text-align:right; padding: 30px 0'>
                 <a href='./cadastro.php'><button type="button" class="btn btn-primary">Adcionar Evento</button></a>
             </div>
         </div>
 
         <div class='d-flex justify-content-center'>
-            <table class="table" style='width:1200px;'>
+            <table class="table" style='width:90%;'>
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -67,7 +67,7 @@ if (!$conn) {
                     echo '  <th scope="col">'.$dados['description'].'</th>';
                     echo '  <th scope="col">'.$dados['price'].'</th>';
                     if ($dados['image'] != ""){echo '  <th scope="col">Carregada</th>';}else{echo '  <th scope="col">Não carregada</th>';}
-                    echo '  <th scope="col"><button type="button" class="btn btn-primary">Editar</button> | <button type="button" class="btn btn-danger">Deletar</button></th>';
+                    echo '  <th scope="col" style="width:100px"><button type="button" alt="Editar" title="Editar" class="btn btn-primary btn-sm">E</button> | <a href=""><button type="button" alt="Deletar" title="Deletar" class="btn btn-danger btn-sm">X</button></a></th>';
                     echo '</tr>';
             
                 }

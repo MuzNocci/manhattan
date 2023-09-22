@@ -1,0 +1,30 @@
+/* Bases */
+@import "../vendor/bootstrap/bootstrap.min.css";
+@import "../vendor/animacoes/animacoes.css";
+@import "bases/fonts.css";
+@import "bases/variables.css";
+@import "bases/base.css";
+@import "bases/theme.css";
+@import "bases/animacoes.css";
+
+/* Global */
+@import "global/util.css";
+@import "global/navegation.css";
+@import "global/titulos.css";
+@import "global/footer.css";
+@import "global/listas.css";
+
+/* Home */
+@import "home/programacao.css";
+@import "home/descontos.css";
+@import "home/eventos.css";
+@import "home/hallfama.css";
+@import "home/gastronomia.css";
+@import "home/contato.css";
+
+
+
+/* Plugins */
+@import "../vendor/swiper/swiper-bundle.min.css";
+@import "../vendor/glightbox/css/glightbox.min.css";
+

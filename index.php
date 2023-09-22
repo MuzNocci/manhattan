@@ -1,31 +1,22 @@
+<?php
 
+session_start();
+
+include('admin/scripts/connection_db.php');
+
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manhattan Café Theatro</title>
-
-
-<!-- Facebook Pixel Code
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window,document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1571803216375474'); 
-  fbq('track', 'PageView');
-  </script>
-  <noscript>
-  <img height="1" width="1" 
-  src="https://www.facebook.com/tr?id=1571803216375474&ev=PageView
-  &noscript=1"/>
-  </noscript>
-  End Facebook Pixel Code -->
+  <title>Manhattan Café Theatro - Teste Prática Internet</title>
 
 
   <base href="https://shoppingoutlet.com.br/demo/manhattan2/">
@@ -249,7 +240,7 @@
 
 
 			<div class="row">
-				<div class="col-lg-12 mb-5" data-animate="zoom" data-delay="3">
+				<div class="col-lg-12 mb-5" data-animate="zoom" data-delay="1">
 
 <!-- Slider main container -->
 <div class="swiper swiper-programacao">
@@ -258,66 +249,27 @@
 	<!-- Additional required wrapper -->
 	<div class="swiper-wrapper">
 
-	  <!-- Slides -->
-	  <div class="swiper-slide">
-		  <div class="swiper-programacao__item px-4 px-md-0 text-center">
-			<h3><span class="text-warning">13 MAI -</span> <span class="text-white">SEXTA</span> <br /> <span class="programacao__hora"><span class="text-white">A partir das</span> <span class="text-warning">18hs</span></span></h3>
-			<a href="vendas-online/comprar">
-				<img src="assets/img/programacao/1.jpg" class="img-fluid rounded-3 border border-dark mb-2" alt="">
-			</a>			
-			<a href="vendas-online/comprar" class="btn btn-outline-primary btn-lg w-100 mb-2">COMPRAR</a>
-			<a href="#" data-titulo="Show no Manhattan: Pré São João - 13 MAI - SEXTA" data-desc="Show no Manhattan: Pré São João - 13 MAI - SEXTA n\n Show no Manhattan: Pré São João - 13 MAI - SEXTA // Atrações: Conde, Kelvis e The Rossi. // Mais informações:" data-link="https://shoppingoutlet.com.br/demo/manhattan2/vendas-online/comprar" class="botaoCompartilhar text-white text-decoration-none" ><img src="assets/img/icon-share.png" width="20" class="me-1" alt> Compartilhe com um amigo</a>
-
-		  </div>
-	  </div>
-	  
-
-	  <!-- Slides -->
-	  <div class="swiper-slide">
-		<div class="swiper-programacao__item px-4 px-md-0 text-center">
-		  <h3><span class="text-warning">13 MAI -</span> <span class="text-white">SEXTA</span> <br /> <span class="programacao__hora"><span class="text-white">A partir das</span> <span class="text-warning">18hs</span></span></h3>
-		  <a href="vendas-online/comprar">
-			  <img src="assets/img/programacao/2.jpg" class="img-fluid rounded-3 border border-dark mb-2" alt="">
-		  </a>			
-		  <a href="vendas-online/comprar" class="btn btn-outline-primary btn-lg w-100 mb-2">COMPRAR</a>
-		  <a href="#" data-titulo="Show no Manhattan: Brega Night - 13 MAI - SEXTA" data-desc="Show no Manhattan: Brega Night - 13 MAI - SEXTA // Atrações: Júnior Siqueira, Silvana Salazar e Charles Matoso. // Mais informações:" data-link="https://shoppingoutlet.com.br/demo/manhattan2/vendas-online/comprar" class="botaoCompartilhar text-white text-decoration-none"><img src="assets/img/icon-share.png" width="20" class="me-1" alt> Compartilhe com um amigo</a>
-
-		</div>
-	</div>
-
-
 	<!-- Slides -->
-	<div class="swiper-slide">
-		<div class="swiper-programacao__item px-4 px-md-0 text-center">
-		  <h3><span class="text-warning">13 MAI -</span> <span class="text-white">SEXTA</span> <br /> <span class="programacao__hora"><span class="text-white">A partir das</span> <span class="text-warning">18hs</span></span></h3>
-		  <a href="vendas-online/comprar">
-			  <img src="assets/img/programacao/3.jpg" class="img-fluid rounded-3 border border-dark mb-2" alt="">
-		  </a>			
-		  <a href="vendas-online/comprar" class="btn btn-outline-primary btn-lg w-100 mb-2">COMPRAR</a>
-		  <a href="#" data-titulo="Show no Manhattan: Uma noite inesquecível - 13 MAI - SEXTA" data-desc="Show no Manhattan: Uma noite inesquecível - 13 MAI - SEXTA // Atrações: Adilson Ramos. // Mais informações:" data-link="https://shoppingoutlet.com.br/demo/manhattan2/vendas-online/comprar" class="botaoCompartilhar text-white text-decoration-none"><img src="assets/img/icon-share.png" width="20" class="me-1" alt> Compartilhe com um amigo</a>
+	<?php
 
-		</div>
-	</div>
+		$events = mysqli_query($conn, 'SELECT * FROM events');
 
+		while ($dados = mysqli_fetch_array($events)) {
 
-	<!-- Slides -->
-	<div class="swiper-slide">
-		<div class="swiper-programacao__item px-4 px-md-0 text-center">
-		  <h3><span class="text-warning">13 MAI -</span> <span class="text-white">SEXTA</span> <br /> <span class="programacao__hora"><span class="text-white">A partir das</span> <span class="text-warning">18hs</span></span></h3>
-		  <a href="vendas-online/comprar">
-			  <img src="assets/img/programacao/4.jpg" class="img-fluid rounded-3 border border-dark mb-2" alt="">
-		  </a>			
-		  <a href="vendas-online/comprar" class="btn btn-outline-primary btn-lg w-100 mb-2">COMPRAR</a>
-		  <a href="#" data-titulo="Show no Manhattan: Hey Jude - 13 MAI - SEXTA" data-desc="Show no Manhattan: Hey Jude - 13 MAI - SEXTA  // Atrações: The Beatles. // Mais informações:" data-link="https://shoppingoutlet.com.br/demo/manhattan2/vendas-online/comprar" class="botaoCompartilhar text-white text-decoration-none"><img src="assets/img/icon-share.png" width="20" class="me-1" alt> Compartilhe com um amigo</a>
+		echo '<div class="swiper-slide">';
+		echo '	<div class="swiper-programacao__item px-4 px-md-0 text-center">';
+		list($ano, $mes, $dia) = explode('-', $dados['date']);
+		echo '		<h3><span class="text-warning">'.$dia.' - '.$mes.'</span> <br /> <span class="programacao__hora"><span class="text-white">A partir das</span> <span class="text-warning">'.$dados['hour'].'h</span></span></h3>';
+		echo '		<a href="https://www.nocciolli.com.br/presentation/manhattan/vendas-online/comprar">';
+		echo '			<img src="https://www.nocciolli.com.br/presentation/manhattan/assets/upload_img/'.$dados['image'].'" class="img-fluid rounded-3 border border-dark mb-2" alt="">';
+		echo '		</a>';		
+		echo '		<a href="vendas-online/comprar/?id='.$dados['idevent'].'" class="btn btn-outline-primary btn-lg w-100 mb-2">COMPRAR</a>';
+		echo '		<a href="#" data-titulo="Show no Manhattan: '.$dados['event'].' - '.$dia.' '.$mes.'" data-desc="Show no Manhattan: '.$dados['event'].' - '.$dia.' '.$mes.' // Atrações: '.$dados['attraction'].'. // Mais informações:" data-link="https://www.nocciolli.com.br/presentation/manhattan/vendas-online/comprar" class="botaoCompartilhar text-white text-decoration-none" ><img src="assets/img/icon-share.png" width="20" class="me-1" alt> Compartilhe com um amigo</a>';
+		echo '	</div>';
+		echo '</div>';
 
-		</div>
-	</div>
-
-
-
-
-
-
+		}
+		?>
 	</div>
 
 	<!-- If we need pagination -->
@@ -1192,3 +1144,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 </body>
 </html>
+<?php
+    mysqli_close($conn)
+?>
